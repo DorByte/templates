@@ -69,3 +69,7 @@ const link = `https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(message)}`
     const el = document.getElementById(id)
     if (el) el.href = link
 })
+
+const badgeMsg = `Hola, me interesa una página web como esta demo`
+document.getElementById("demoBadge").href =
+    `https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(badgeMsg)}`

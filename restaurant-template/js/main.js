@@ -58,6 +58,10 @@ const whatsapp = `https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(messag
     if (el) el.href = whatsapp
 })
 
+const badgeMsg = `Hola, me interesa una página web como esta demo`
+document.getElementById("demoBadge").href =
+    `https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(badgeMsg)}`
+
 // Colores de marca
 document.getElementById("section_footer").style.backgroundColor = CONFIG.color
 document.getElementById("section_footer").style.color = CONFIG.contrast

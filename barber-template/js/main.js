@@ -51,6 +51,10 @@ const whatsapp = `https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(messag
     }
 })
 
+const badgeMsg = `Hola, me interesa una página web como esta demo`
+document.getElementById("demoBadge").href =
+    `https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(badgeMsg)}`
+
 // ===============================
 // SERVICIOS DINÁMICOS
 // ===============================
