@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Páginas web profesionales para tu negocio. Diseño moderno, rápido y listo para vender." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💼</text></svg>" />
 
     <title id="title"></title>
 
@@ -47,7 +49,7 @@
 
     <!-- HERO -->
     <section  class="py-24 text-center bg-white" id="hero" >
-      <div id="heroContent" >
+      <div id="heroContent" class="p-8" >
       <h2 id="heroTitle" class="text-5xl font-semibold mb-6 leading-tight"></h2>
 
       <p
@@ -65,7 +67,7 @@
     </section>
 
     <!-- SERVICIOS -->
-    <section class="py-20 bg-gray-50 text-center">
+    <section id="servicesSection" class="py-20 bg-gray-50 text-center">
       <h3 class="text-3xl font-semibold mb-12">Nuestros Servicios</h3>
 
       <div
@@ -75,7 +77,7 @@
     </section>
 
     <!-- GALERÍA PRO -->
-    <section class="py-20 bg-white text-center">
+    <section id="gallerySection" class="py-20 bg-white text-center">
       <h3 id="galleryTitle" class="text-3xl font-semibold mb-12">Nuestro Trabajo</h3>
 
       <div
@@ -87,9 +89,9 @@
         <a
         id="downloadButton"
           target="_blank"
-          href="./assets/files/menu.jpg"
+          href="#"
           download
-          class="bg-black text-white px-6 py-3 rounded-lg"
+          class="hidden bg-black text-white px-6 py-3 rounded-lg"
         >
           Ver menú completo
         </a>
@@ -103,10 +105,7 @@
         Lo que dicen nuestros clientes
       </h3>
 
-      <div class="max-w-3xl mx-auto space-y-6 text-gray-600">
-        <p>"Excelente servicio, muy recomendados"</p>
-        <p>"Atención rápida y profesional"</p>
-        <p>"Volvería sin dudarlo"</p>
+      <div id="testimonials" class="max-w-3xl mx-auto space-y-6 text-gray-600">
       </div>
     </section>
 
@@ -133,16 +132,18 @@
       <p id="phone" class="text-gray-600"></p>
       <p id="hours" class="mb-6"></p>
       <iframe
+        id="mapFrame"
         class="w-full h-80 rounded-lg"
-        src="https://maps.google.com/maps?q=4.207167,-74.639123&t=&z=16&ie=UTF8&iwloc=&output=embed"
+        src="https://maps.google.com/maps?q=Melgar,Tolima&t=&z=16&ie=UTF8&iwloc=&output=embed"
+        loading="lazy"
       >
       </iframe>
       </div>
     </section>
-    <section class="bg-white py-16 text-center">
+    <section id="socialSection" class="bg-white py-16 text-center">
       <h3 class="text-3xl font-bold mb-6">Síguenos en nuestras redes</h3>
 
-      <p class="mb-8">Descubre nuestros platos, promociones y novedades</p>
+      <p id="socialText" class="mb-8">Síguenos y descubre novedades</p>
 
       <div class="flex justify-center gap-6">
         <a

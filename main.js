@@ -1,4 +1,3 @@
-
 // ===============================
 // 🔹 1. LEER PARÁMETROS DE URL
 // ===============================
@@ -23,7 +22,7 @@ if (nameFromURL) {
 }
 
 if (phoneFromURL) {
-  CONFIG.phone = phoneFromURL
+  CONFIG.phone = phoneFromURL.replace(/\D/g, "")
 }
 
 if (addressFromURL) {
@@ -37,8 +36,23 @@ if (addressFromURL) {
 const info = DATA[CONFIG.type]
 
 if (!info) {
-  console.error("Tipo de negocio inválido")
+  document.body.innerHTML = `
+    <div style="font-family:sans-serif;text-align:center;padding:80px 20px">
+      <h1>Plantilla no encontrada</h1>
+      <p>El tipo "${CONFIG.type}" no existe en data.js</p>
+    </div>`
+  throw new Error("Tipo de negocio inválido: " + CONFIG.type)
 }
+
+// Normalizar servicios: acepta "texto" u objeto {title/name, detail/description}
+const services = (info.services || []).map(s =>
+  typeof s === "string" ? { title: s, detail: "" } : { title: s.title || s.name, detail: s.detail || s.description || "" }
+)
+
+const gallery = info.gallery || []
+const testimonials = CONFIG.testimonials && CONFIG.testimonials.length
+  ? CONFIG.testimonials
+  : ["Excelente servicio, muy recomendados", "Atención rápida y profesional", "Volvería sin dudarlo"]
 
 // ===============================
 // 🔹 4. TEXTOS
@@ -47,34 +61,65 @@ if (!info) {
 document.getElementById("title").innerText = CONFIG.businessName
 document.getElementById("businessName").innerText = CONFIG.businessName
 
-document.getElementById("heroTitle").innerText = info.title
-document.getElementById("heroSubtitle").innerText = info.subtitle
+document.getElementById("heroTitle").innerText = info.title || CONFIG.businessName
+document.getElementById("heroSubtitle").innerText = info.subtitle || ""
 
 document.getElementById("address").innerText = CONFIG.address
 document.getElementById("phone").innerText = CONFIG.phoneText
 document.getElementById("hours").innerText = CONFIG.hours
-document.getElementById("footerName").innerText = CONFIG.businessName+" - " + CONFIG.type
-if(info.download){
-    document.getElementById("downloadButton").href = info.download
+document.getElementById("footerName").innerText = `${CONFIG.businessName} - ${CONFIG.type}`
+
+if (info.titleGallery) {
+  document.getElementById("galleryTitle").innerText = info.titleGallery
 }
-else{
-    document.getElementById("downloadButton").style.display = "none"
+if (info.buttonDownloadLabel) {
+  document.getElementById("downloadButton").innerText = info.buttonDownloadLabel
 }
-if(info.titleGallery)
-    document.getElementById("galleryTitle").innerText = info.titleGallery
-if(info.buttonDownloadLabel)
-    document.getElementById("downloadButton").innerText = info.buttonDownloadLabel
+if (info.download) {
+  const btn = document.getElementById("downloadButton")
+  btn.href = info.download
+  btn.classList.remove("hidden")
+}
+
+// Mapa configurable (CONFIG.mapQuery o fallback a la dirección)
+const mapQuery = CONFIG.mapQuery || CONFIG.address.replace(/^[^A-Za-zÀ-ÿ0-9]+/, "")
+document.getElementById("mapFrame").src =
+  `https://maps.google.com/maps?q=${encodeURIComponent(mapQuery)}&t=&z=16&ie=UTF8&iwloc=&output=embed`
+
+// Redes sociales: ocultar sección si no hay links
+const socialSection = document.getElementById("socialSection")
+if (CONFIG.socialText) {
+  document.getElementById("socialText").innerText = CONFIG.socialText
+}
+if (!CONFIG.instagram && !CONFIG.facebook) {
+  socialSection.style.display = "none"
+}
+
+// Testimonios
+const testimonialsEl = document.getElementById("testimonials")
+testimonialsEl.innerHTML = testimonials
+  .map(t => `<blockquote class="border-l-4 border-black pl-4 text-left italic">“${t}”</blockquote>`)
+  .join("")
+
+// Secciones opcionales
+if (!services.length) {
+  document.getElementById("servicesSection").style.display = "none"
+}
+if (!gallery.length) {
+  document.getElementById("gallerySection").style.display = "none"
+}
+
 // ===============================
 // 🔹 5. WHATSAPP
 // ===============================
 
-const message = `Hola, quiero información sobre ${CONFIG.businessName}`
+const message = CONFIG.whatsappMessage || `Hola, quiero información sobre ${CONFIG.businessName}`
 const link = `https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(message)}`
 
-document.getElementById("whatsappNav").href = link
-document.getElementById("whatsappHero").href = link
-document.getElementById("whatsappFinal").href = link
-document.getElementById("whatsappFloat").href = link
+;["whatsappNav", "whatsappHero", "whatsappFinal", "whatsappFloat"].forEach(id => {
+  const el = document.getElementById(id)
+  if (el) el.href = link
+})
 
 // ===============================
 // 🔹 6. SERVICIOS DINÁMICOS
@@ -82,20 +127,14 @@ document.getElementById("whatsappFloat").href = link
 
 const servicesContainer = document.getElementById("services")
 
-if (servicesContainer && info.services) {
-
-  servicesContainer.innerHTML = ""
-
-  info.services.forEach(service => {
-
-    servicesContainer.innerHTML += `
+if (servicesContainer && services.length) {
+  servicesContainer.innerHTML = services
+    .map(service => `
     <div class="p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition text-left">
       <h4 class="font-semibold text-lg mb-2">${service.title}</h4>
       <p class="text-gray-500 text-sm">${service.detail}</p>
-    </div>
-    `
-  })
-
+    </div>`)
+    .join("")
 }
 
 // ===============================
@@ -106,21 +145,15 @@ const galleryContainer = document.getElementById("gallery")
 const lightbox = document.getElementById("lightbox")
 const lightboxImg = document.getElementById("lightboxImg")
 
-if (galleryContainer && info.gallery) {
-
-  galleryContainer.innerHTML = ""
-
-  info.gallery.forEach(img => {
-
-    galleryContainer.innerHTML += `
+if (galleryContainer && gallery.length) {
+  galleryContainer.innerHTML = gallery
+    .map(img => `
     <div class="overflow-hidden rounded-2xl cursor-pointer">
-      <img src="${img}" 
+      <img src="${img}" loading="lazy" alt="${CONFIG.businessName}"
       class="w-full h-52 object-cover hover:scale-110 transition duration-300"
       onclick="openLightbox('${img}')">
-    </div>
-    `
-  })
-
+    </div>`)
+    .join("")
 }
 
 // ===============================
@@ -144,29 +177,28 @@ if (lightbox) {
 // 🔹 9. Banner
 // ===============================
 
-if(info.banner) {
-  document.getElementById("hero").style.backgroundImage = `url('${info.banner}')`
-  document.getElementById("hero").style.backgroundSize = "cover"
-  document.getElementById("hero").style.backgroundPosition = "center"
-  document.getElementById("hero").style.backgroundRepeat = "no-repeat"  
+if (info.banner) {
+  const hero = document.getElementById("hero")
+  hero.style.backgroundImage = `url('${info.banner}')`
+  hero.style.backgroundSize = "cover"
+  hero.style.backgroundPosition = "center"
+  hero.style.backgroundRepeat = "no-repeat"
   document.getElementById("heroTitle").style.color = "white"
   document.getElementById("heroSubtitle").style.color = "white"
-  document.getElementById("hero").className="h-[70vh] flex items-center  justify-center bg-gray-100 text-center"  
-  document.getElementById("heroContent").className="bg-black bg-opacity-50 p-8 rounded-lg"
-  document.getElementById("whatsappHero").className=document.getElementById("whatsappHero").className+" border-white border-2"
-  // style=" background-size: cover; background-position: center; background-repeat: no-repeat;"
+  hero.className = "h-[70vh] flex items-center justify-center bg-gray-100 text-center"
+  document.getElementById("heroContent").className = "bg-black bg-opacity-60 p-8 rounded-2xl backdrop-blur-sm"
+  document.getElementById("whatsappHero").classList.add("border-2", "border-white")
 }
 
 // ===============================
-// 🔹 10. Redes sociales
+// 🔹 10. REDES SOCIALES
 // ===============================
 
-document.getElementById("instagramLink").href = CONFIG.instagram
-document.getElementById("facebookLink").href = CONFIG.facebook
+const instagramLink = document.getElementById("instagramLink")
+const facebookLink = document.getElementById("facebookLink")
 
-// ===============================
-// 🔹 11. LOG (DEBUG OPCIONAL)
-// ===============================
+if (CONFIG.instagram) instagramLink.href = CONFIG.instagram
+else instagramLink.parentElement.style.display = "none"
 
-console.log("CONFIG FINAL:", CONFIG)
-console.log("DATA USADA:", info)
+if (CONFIG.facebook) facebookLink.href = CONFIG.facebook
+else facebookLink.parentElement.style.display = "none"

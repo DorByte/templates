@@ -1,44 +1,46 @@
 const CONFIG = {
 
-    businessName: "Tech Store",
-    businessName2:"Tech Store - Celulares y Accesorios",
+    businessName: "Taller El Motor",
+    businessName2:"Taller El Motor - Servicio Técnico Vehicular",
 
-    phone: "573008935057",
+    phone: "573001234567",
 
-    phoneText: "📞 (57) 300 893 5057",
+    phoneText: "📞 (57) 300 123 4567",
 
-    address: "📍 Calle 10 #5-20, Melgar",
+    address: "📍 Av. Principal #10-20, Melgar",
 
-    hours: "🕒 Lunes a Domingo 5pm - 11pm",
+    // Query para el mapa embebido (ciudad, dirección o coordenadas)
+    mapQuery: "Melgar, Tolima, Colombia",
 
-    instagram: "https://www.instagram.com/jsdorado17/",
+    hours: "🕒 Lunes a Sábado 8am - 6pm",
 
-    facebook: "https://web.facebook.com/profile.php?id=100088269885098",
+    instagram: "",
 
+    facebook: "",
 
-    products: [
-        {
-            name: "iPhone 13",
-            price: "$2.800.000",
-            image: "assets/images/iphone.webp"
-        },
+    socialText: "Síguenos y descubre promociones",
 
-        {
-            name: "Samsung S21",
-            price: "$2.200.000",
-            image: "assets/images/samsungS21.webp"
-        },
+    heroTitle: "Servicio técnico confiable para tu vehículo",
+    heroSubtitle: "Diagnóstico rápido y atención inmediata",
+    heroCta: "Solicitar servicio",
 
-        {
-            name: "Xiaomi Redmi",
-            price: "$1.200.000",
-            image: "assets/images/xiaomi_redmi.webp"
-        },
+    services: [
+        { name: "Cambio de aceite", description: "Mantenimiento rápido y seguro." },
+        { name: "Diagnóstico", description: "Revisión completa del vehículo." },
+        { name: "Reparaciones", description: "Motor, frenos y suspensión." },
+        { name: "Alineación y balanceo", description: "Con Equipos de última generación." }
+    ],
 
-        {
-            name: "AirPods Pro",
-            price: "$900.000",
-            image: "assets/images/airpods.webp"
-        }
+    gallery: [
+        "https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1515923256482-1c04580b477c?auto=format&fit=crop&w=600&q=80"
+    ],
+
+    trust: [
+        "Más de 10 años de experiencia",
+        "Atención rápida",
+        "Técnicos especializados",
+        "Garantía en servicios"
     ]
 }

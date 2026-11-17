@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Tienda de ropa y moda. Compra fácil por WhatsApp.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👕</text></svg>">
 <title id="nameTitle">Urban Style</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
@@ -17,25 +19,25 @@
 
 <h1 class=" font-bold" id="nameFront">Urban Style</h1>
 
-<a href="https://wa.me/" class="bg-black text-white px-4 py-2 rounded-lg">
+<a id="whatsappNav" href="https://wa.me/" target="_blank" class="bg-black text-white px-4 py-2 rounded-lg">
 Comprar
 </a>
 
 </header>
 
 <!-- HERO -->
-<section style="background-image: url('assets/images/hero.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; color: white;" class="h-[70vh] flex items-center  justify-center bg-gray-100 text-center">
+<section id="heroSection" style="background-image: url('assets/images/hero.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; color: white;" class="h-[70vh] flex items-center  justify-center bg-gray-100 text-center">
 
 <div class="bg-black bg-opacity-50 p-8 rounded-lg">
-<h2 class="text-5xl font-bold mb-4">
+<h2 id="heroTitle" class="text-5xl font-bold mb-4">
 Nueva Colección 2026
 </h2>
 
-<p class="mb-6 ">
+<p id="heroSubtitle" class="mb-6 ">
 Estilo urbano moderno
 </p>
 
-<a href="https://wa.me/" class="bg-black text-white px-6 py-3 rounded-xl">
+<a id="whatsappHero" href="https://wa.me/" target="_blank" class="bg-black text-white px-6 py-3 rounded-xl">
 Ver productos
 </a>
 </div>
@@ -83,8 +85,10 @@ Accesorios
       <p id="hours" class="mb-6"></p>
 
       <iframe
+        id="mapFrame"
         class="w-full h-80 rounded-lg"
-        src="https://maps.google.com/maps?q=4.207167,-74.639123&t=&z=16&ie=UTF8&iwloc=&output=embed"
+        src="https://maps.google.com/maps?q=Melgar,Tolima&t=&z=16&ie=UTF8&iwloc=&output=embed"
+        loading="lazy"
       >
       </iframe>
     </section>
@@ -92,7 +96,7 @@ Accesorios
 <section class=" py-16 text-center">
       <h3 class="text-3xl font-bold mb-6">Síguenos en nuestras redes</h3>
 
-      <p class="mb-8">Descubre nuestros platos, promociones y novedades</p>
+      <p id="socialText" class="mb-8">Síguenos y descubre novedades</p>
 
       <div class="flex justify-center gap-6">
         <a
@@ -141,6 +145,15 @@ Accesorios
 
       <p id="footerPhone"></p>
     </footer>
+
+    <!-- BOTÓN WHATSAPP FLOTANTE -->
+    <a
+      id="whatsappFloat"
+      target="_blank"
+      class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg text-xl hover:scale-110 transition"
+    >
+      💬
+    </a>
 
 <script src="config.js"></script>
 <script src="js/main.js"></script>

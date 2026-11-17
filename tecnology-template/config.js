@@ -15,12 +15,25 @@ const CONFIG = {
 
     facebook: "https://web.facebook.com/profile.php?id=100088269885098",
 
+    socialText: "Síguenos y descubre novedades",
+
+    heroTitle: "Los mejores celulares al mejor precio",
+    heroSubtitle: "iPhone, Samsung, Xiaomi y más",
+    heroCta: "Cotizar ahora",
+    ctaTitle: "¿Buscas un celular?",
+    ctaSubtitle: "Te asesoramos por WhatsApp",
+    ctaButton: "Escríbenos",
+
+    categories: ["Celulares", "Cargadores", "Audífonos", "Fundas"],
+
+    // Mensaje prellenado de WhatsApp (opcional)
+    // whatsappMessage: "Hola, quiero cotizar un producto",
 
     products: [
         {
             name: "iPhone 13",
             price: "$2.800.000",
-            image: "assets/images/iphone.webp"
+            image: "assets/images/Iphone.webp"
         },
 
         {

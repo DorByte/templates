@@ -1,3 +1,7 @@
+// ===============================
+// TEXTOS Y DATOS
+// ===============================
+
 document.getElementById("nameTitle").innerText = CONFIG.businessName2
 document.getElementById("nameFront").innerText = CONFIG.businessName
 
@@ -6,50 +10,58 @@ document.getElementById("hours").innerText = CONFIG.hours
 
 document.getElementById("footerName").innerText = "© "+new Date().getFullYear()+" "+CONFIG.businessName2
 document.getElementById("footerPhone").innerText = CONFIG.phoneText
+
+// Hero
+document.getElementById("heroTitle").innerText = CONFIG.heroTitle || ""
+document.getElementById("heroSubtitle").innerText = CONFIG.heroSubtitle || ""
+if (CONFIG.heroCta) {
+    document.getElementById("btnR").innerText = CONFIG.heroCta
+}
+if (CONFIG.contactCta) {
+    document.getElementById("btnC").innerText = CONFIG.contactCta
+}
+
+// Redes sociales
 document.getElementById("instagramLink").href = CONFIG.instagram
 document.getElementById("facebookLink").href = CONFIG.facebook
+if (CONFIG.socialText) {
+    document.getElementById("socialText").innerText = CONFIG.socialText
+}
 
-const whatsapp = `https://wa.me/${CONFIG.phone}`
+// Mapa
+if (CONFIG.mapQuery) {
+    const q = CONFIG.mapQuery || CONFIG.address.replace(/^[^A-Za-zÀ-ÿ0-9]+/, "")
+    document.getElementById("mapFrame").src =
+        `https://maps.google.com/maps?q=${encodeURIComponent(q)}&t=&z=16&ie=UTF8&iwloc=&output=embed`
+}
 
-//document.getElementById("whatsappNav").href = whatsapp
-//document.getElementById("whatsappHero").href = whatsapp
-//document.getElementById("whatsappFinal").href = whatsapp
-//document.getElementById("whatsappFloat").href = whatsapp
+// ===============================
+// WHATSAPP
+// ===============================
 
-document.getElementById("btnR").style.backgroundColor = CONFIG.color
-document.getElementById("btnR").style.color = CONFIG.contrast
-document.getElementById("btnR").href = whatsapp
+const message = CONFIG.whatsappMessage || `Hola, quiero información sobre ${CONFIG.businessName}`
+const whatsapp = `https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(message)}`
 
-
-document.getElementById("btnC").style.backgroundColor = CONFIG.color
-document.getElementById("btnC").style.color = CONFIG.contrast
-document.getElementById("btnC").href = whatsapp
-
-
-
-
-
-
-
-for (const element in CONFIG.services) {
-    let el = null
-
-    if (element == 0)
-        el = document.getElementById("content")
-    else
-        el = document.getElementById("content" + (parseInt(element) - 1))
-
-   
-
-    el.querySelector("#name").innerText = CONFIG.services[element].name
-    
-    el.querySelector("#description").innerText = CONFIG.services[element].description
-    
-    if (element != CONFIG.services.length - 1) {
-        const clone = el.cloneNode(true)
-        clone.id = "content" + element
-        el.parentNode.insertBefore(clone, el.nextSibling)
+;["btnR", "btnC", "whatsappFloat"].forEach(id => {
+    const el = document.getElementById(id)
+    if (el) {
+        el.href = whatsapp
+        el.style.backgroundColor = CONFIG.color
+        el.style.color = CONFIG.contrast
     }
+})
 
+// ===============================
+// SERVICIOS DINÁMICOS
+// ===============================
 
+const grid = document.getElementById("servicesGrid")
+
+if (grid && CONFIG.services && CONFIG.services.length) {
+    grid.innerHTML = CONFIG.services.map(service => `
+    <div class="service">
+      <h3>${service.name || service.title}</h3>
+      <p>${service.description || service.detail || ""}</p>
+    </div>
+    `).join("")
 }

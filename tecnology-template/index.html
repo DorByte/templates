@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Tienda de tecnología: celulares, accesorios y soporte. Compra por WhatsApp.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📱</text></svg>">
 <script src="https://cdn.tailwindcss.com"></script>
 <title id="nameTitle">TechStore - Celulares y Accesorios</title>
-<Link rel="stylesheet" type="text/css" href="css/styles.css">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
 
 
 </head>
@@ -14,14 +16,14 @@
 
 <header>
 <h1 id="nameFront">TechStore</h1>
-<a class="btn colorComp" href="https://wa.me/">Comprar por WhatsApp</a>
+<a id="whatsappNav" target="_blank" class="btn colorComp" href="https://wa.me/">Comprar por WhatsApp</a>
 </header>
 
 <section class="hero">
-<h2>Los mejores celulares al mejor precio</h2>
-<p>iPhone, Samsung, Xiaomi y más</p>
+<h2 id="heroTitle">Los mejores celulares al mejor precio</h2>
+<p id="heroSubtitle">iPhone, Samsung, Xiaomi y más</p>
 <br>
-<a class="btn colorComp" href="https://wa.me/">Cotizar ahora</a>
+<a id="whatsappHero" target="_blank" class="btn colorComp" href="https://wa.me/">Cotizar ahora</a>
 </section>
 
 <section class="products">
@@ -38,18 +40,14 @@
 
 <h3 class="text-3xl font-bold mb-6">Categorías</h3>
 
-<div>
-<span class="cat">Celulares</span>
-<span class="cat">Cargadores</span>
-<span class="cat">Audífonos</span>
-<span class="cat">Fundas</span>
+<div id="categoriesList">
 </div>
 
 </section>
 <section  class="py-16 text-center social">
       <h3 class="text-3xl font-bold mb-6">Síguenos en nuestras redes</h3>
 
-      <p class="mb-8">Descubre nuestros platos, promociones y novedades</p>
+      <p id="socialText" class="mb-8">Síguenos y descubre novedades</p>
 
       <div class="flex justify-center gap-6">
         <a
@@ -98,7 +96,7 @@
 <h2>¿Buscas un celular?</h2>
 <p>Te asesoramos por WhatsApp</p>
 <br>
-<a class="btn colorInv" href="https://wa.me/">Escríbenos</a>
+<a id="whatsappCta" target="_blank" class="btn colorInv" href="https://wa.me/">Escríbenos</a>
 
 </section>
 
@@ -106,6 +104,8 @@
 <footer>
 <p id="address">📍 Dirección del local</p>
 <p id="footerPhone">📞 +57 300 000 0000</p>
+<p id="hours"></p>
+<p id="footerName"></p>
 </footer>
 <script src="config.js"></script>
 <script src="js/main.js"></script>

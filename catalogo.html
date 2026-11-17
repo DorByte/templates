@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Páginas web profesionales para tu negocio. Diseño moderno, rápida y lista para vender." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>" />
+    <title id="pageTitle">Páginas web que venden</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Poppins", "sans-serif"] },
+            colors: {
+              brand: { 50: "#eef2ff", 500: "#4f46e5", 600: "#4338ca", 900: "#1e1b4b" }
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+
+  <body class="text-gray-800 bg-white font-sans antialiased">
+
+    <!-- NAVBAR -->
+    <header class="bg-white/80 backdrop-blur border-b sticky top-0 z-50">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <h1 id="businessName" class="text-lg font-bold tracking-wide text-brand-900"></h1>
+
+        <nav class="hidden md:flex items-center gap-8 text-sm text-gray-600">
+          <a href="#templates" class="hover:text-brand-600 transition">Templates</a>
+          <a href="#precios" class="hover:text-brand-600 transition">Precios</a>
+          <a href="#proceso" class="hover:text-brand-600 transition">Proceso</a>
+        </nav>
+
+        <a id="whatsappNav" target="_blank"
+          class="bg-green-500 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-green-600 transition">
+          Cotizar
+        </a>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="bg-gradient-to-br from-brand-900 via-brand-600 to-indigo-500 text-white">
+      <div class="max-w-6xl mx-auto px-6 py-24 text-center">
+        <span class="inline-block bg-white/10 border border-white/20 rounded-full px-4 py-1 text-sm mb-6">
+          Diseño web profesional · Entrega en días, no meses
+        </span>
+        <h2 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+          Tu negocio merece una web<br />que venda por ti
+        </h2>
+        <p class="text-lg md:text-xl text-indigo-100 max-w-2xl mx-auto mb-10">
+          Páginas web modernas, rápidas y con botón de WhatsApp integrado.
+          El cliente escribe, tú vendes.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#templates" class="bg-white text-brand-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+            Ver templates
+          </a>
+          <a id="whatsappHero" target="_blank"
+            class="bg-green-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-600 transition">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="border-b bg-gray-50">
+      <div class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <p class="text-3xl font-extrabold text-brand-600" id="statTemplates">7</p>
+          <p class="text-sm text-gray-500">Diseños disponibles</p>
+        </div>
+        <div>
+          <p class="text-3xl font-extrabold text-brand-600">100%</p>
+          <p class="text-sm text-gray-500">Responsive (móvil y PC)</p>
+        </div>
+        <div>
+          <p class="text-3xl font-extrabold text-brand-600">24/7</p>
+          <p class="text-sm text-gray-500">Tu web vende mientras duermes</p>
+        </div>
+        <div>
+          <p class="text-3xl font-extrabold text-brand-600">Desde 3 días</p>
+          <p class="text-sm text-gray-500">Tiempo de entrega</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEMPLATES -->
+    <section id="templates" class="py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <h3 class="text-3xl md:text-4xl font-extrabold text-center mb-4">Elige tu diseño</h3>
+        <p class="text-center text-gray-500 mb-12 max-w-xl mx-auto">
+          Cada template es una página completa lista para personalizar con el nombre,
+          fotos y datos de tu negocio. Haz clic en "Ver demo" para verla en vivo.
+        </p>
+
+        <div id="templateGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+      </div>
+    </section>
+
+    <!-- PRECIOS -->
+    <section id="precios" class="py-20 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <h3 class="text-3xl md:text-4xl font-extrabold text-center mb-4">Precios simples</h3>
+        <p class="text-center text-gray-500 mb-12">Un solo pago claro. Sin sorpresas.</p>
+
+        <div class="grid md:grid-cols-3 gap-8 items-stretch">
+          <!-- Básico -->
+          <div class="bg-white rounded-2xl shadow-sm border p-8 flex flex-col">
+            <h4 class="text-xl font-bold mb-2">Página Esencial</h4>
+            <p class="text-gray-500 text-sm mb-6">Ideal para negocios que solo quieren verse profesionales.</p>
+            <p class="text-4xl font-extrabold mb-6">$800.000</p>
+            <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+              <li>✔ Diseño de 1 página</li>
+              <li>✔ Botón de WhatsApp</li>
+              <li>✔ Google Maps</li>
+              <li>✔ Redes sociales</li>
+              <li>✔ Responsive</li>
+            </ul>
+            <a id="waBasic" target="_blank" class="block text-center bg-gray-900 text-white py-3 rounded-xl font-semibold hover:bg-gray-700 transition">
+              Quiero esta
+            </a>
+          </div>
+
+          <!-- Estándar -->
+          <div class="bg-white rounded-2xl shadow-lg border-2 border-brand-500 p-8 flex flex-col relative">
+            <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-500 text-white text-xs font-bold px-4 py-1 rounded-full">
+              MÁS VENDIDO
+            </span>
+            <h4 class="text-xl font-bold mb-2">Web Negocio</h4>
+            <p class="text-gray-500 text-sm mb-6">El paquete completo para vender más.</p>
+            <p class="text-4xl font-extrabold mb-2">$1.500.000</p>
+            <p class="text-sm text-gray-500 mb-6">o renovación $600.000/año</p>
+            <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+              <li>✔ Diseño + desarrollo</li>
+              <li>✔ WhatsApp + formulario</li>
+              <li>✔ Google Maps + redes</li>
+              <li>✔ SEO básico</li>
+              <li>✔ 1 año hosting + SSL</li>
+              <li>✔ 1 año mantenimiento</li>
+            </ul>
+            <a id="waStandard" target="_blank" class="block text-center bg-brand-500 text-white py-3 rounded-xl font-semibold hover:bg-brand-600 transition">
+              Quiero esta
+            </a>
+          </div>
+
+          <!-- Premium -->
+          <div class="bg-white rounded-2xl shadow-sm border p-8 flex flex-col">
+            <h4 class="text-xl font-bold mb-2">Web Premium</h4>
+            <p class="text-gray-500 text-sm mb-6">Para negocios que quieren destacar al máximo.</p>
+            <p class="text-4xl font-extrabold mb-6">$2.200.000</p>
+            <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+              <li>✔ Todo lo del Web Negocio</li>
+              <li>✔ Logo y textos a medida</li>
+              <li>✔ Galería de fotos profesional</li>
+              <li>✔ Sección de productos/menú</li>
+              <li>✔ Cambios ilimitados (mes 1)</li>
+            </ul>
+            <a id="waPremium" target="_blank" class="block text-center bg-gray-900 text-white py-3 rounded-xl font-semibold hover:bg-gray-700 transition">
+              Quiero esta
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section id="proceso" class="py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <h3 class="text-3xl md:text-4xl font-extrabold text-center mb-12">Así de fácil</h3>
+
+        <div class="grid md:grid-cols-4 gap-8 text-center">
+          <div class="p-6">
+            <div class="w-14 h-14 bg-brand-50 text-brand-600 rounded-2xl flex items-center justify-center text-2xl font-extrabold mx-auto mb-4">1</div>
+            <h4 class="font-bold mb-2">Elige tu diseño</h4>
+            <p class="text-sm text-gray-500">Mira las demos y escoge el que más te guste.</p>
+          </div>
+          <div class="p-6">
+            <div class="w-14 h-14 bg-brand-50 text-brand-600 rounded-2xl flex items-center justify-center text-2xl font-extrabold mx-auto mb-4">2</div>
+            <h4 class="font-bold mb-2">Cuéntanos tu negocio</h4>
+            <p class="text-sm text-gray-500">Nombre, fotos, servicios y WhatsApp. Nosotros lo montamos.</p>
+          </div>
+          <div class="p-6">
+            <div class="w-14 h-14 bg-brand-50 text-brand-600 rounded-2xl flex items-center justify-center text-2xl font-extrabold mx-auto mb-4">3</div>
+            <h4 class="font-bold mb-2">Revisas y apruebas</h4>
+            <p class="text-sm text-gray-500">Te enviamos la demo. Ajustamos lo que quieras.</p>
+          </div>
+          <div class="p-6">
+            <div class="w-14 h-14 bg-brand-50 text-brand-600 rounded-2xl flex items-center justify-center text-2xl font-extrabold mx-auto mb-4">4</div>
+            <h4 class="font-bold mb-2">Publicamos y vendes</h4>
+            <p class="text-sm text-gray-500">Tu web queda en línea y lista para recibir clientes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <h3 class="text-3xl md:text-4xl font-extrabold text-center mb-12">Lo que dicen mis clientes</h3>
+
+        <div id="testimonialsGrid" class="grid md:grid-cols-3 gap-8"></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20">
+      <div class="max-w-3xl mx-auto px-6">
+        <h3 class="text-3xl md:text-4xl font-extrabold text-center mb-12">Preguntas frecuentes</h3>
+
+        <div class="space-y-4" id="faqList"></div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="bg-gray-900 text-white text-center py-20">
+      <h3 class="text-3xl md:text-4xl font-extrabold mb-4">¿Listo para tener tu página web?</h3>
+      <p class="text-gray-400 mb-8 max-w-xl mx-auto">
+        Escríbenos por WhatsApp, te enviamos una demo gratis con los datos de tu negocio.
+      </p>
+      <a id="whatsappFinal" target="_blank"
+        class="inline-block bg-green-500 text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-green-600 transition">
+        Cotizar ahora
+      </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-950 text-gray-400 text-center py-8 text-sm">
+      <p id="footerName"></p>
+    </footer>
+
+    <!-- BOTÓN WHATSAPP FLOTANTE -->
+    <a id="whatsappFloat" target="_blank"
+      class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg text-xl hover:scale-110 transition">
+      💬
+    </a>
+
+    <script src="config.js"></script>
+    <script>
+      // ===============================
+      // DATOS DE TEMPLATES
+      // ===============================
+      const TEMPLATES = [
+        {
+          name: "Multi-rubro",
+          emoji: "🌐",
+          desc: "La plantilla más versátil: servicios, galería, testimonios y contacto. Cambia el tipo con un parámetro.",
+          demo: "./?type=restaurante",
+          tag: "Universal"
+        },
+        {
+          name: "Barbería y Peluquería",
+          emoji: "✂️",
+          desc: "Reservas por WhatsApp, servicios, galería de trabajos y mapa de ubicación.",
+          demo: "./barber-template/",
+          tag: "Belleza"
+        },
+        {
+          name: "Restaurante",
+          emoji: "🍽️",
+          desc: "Menú destacado con precios, pedidos por WhatsApp, descarga de menú y reservas.",
+          demo: "./restaurant-template/",
+          tag: "Gastronomía"
+        },
+        {
+          name: "Tienda de Ropa",
+          emoji: "👕",
+          desc: "Catálogo de productos con fotos, precios, filtros por categoría y compra por WhatsApp.",
+          demo: "./clothing_store/",
+          tag: "Moda"
+        },
+        {
+          name: "Tienda de Tecnología",
+          emoji: "📱",
+          desc: "Vitrina de productos con cotización directa por WhatsApp y categorías.",
+          demo: "./tecnology-template/",
+          tag: "Tecnología"
+        },
+        {
+          name: "Taller / Servicios",
+          emoji: "🔧",
+          desc: "Perfecto para talleres mecánicos, reparaciones y servicios técnicos. Garantías y confianza.",
+          demo: "./workshops/",
+          tag: "Servicios"
+        },
+        {
+          name: "Negocio Local",
+          emoji: "🏪",
+          desc: "Genérico para cualquier negocio local: servicios, productos opcionales, galería y contacto.",
+          demo: "./local_businesses/",
+          tag: "Genérico"
+        }
+      ]
+
+      // ===============================
+      // CONFIG
+      // ===============================
+      document.getElementById("pageTitle").innerText = `${CONFIG.businessName} | Páginas web que venden`
+      document.getElementById("businessName").innerText = CONFIG.businessName
+      document.getElementById("footerName").innerText = `© ${new Date().getFullYear()} ${CONFIG.businessName} - Todos los derechos reservados`
+
+      const wa = (msg) =>
+        `https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(msg)}`
+
+      // WhatsApp general
+      const generalMsg = `Hola, quiero información sobre sus páginas web`
+      ;["whatsappNav", "whatsappHero", "whatsappFinal", "whatsappFloat"].forEach(id => {
+        document.getElementById(id).href = wa(CONFIG.whatsappMessage || generalMsg)
+      })
+
+      // WhatsApp por paquete
+      document.getElementById("waBasic").href = wa("Hola, me interesa el paquete Página Esencial ($800.000)")
+      document.getElementById("waStandard").href = wa("Hola, me interesa el paquete Web Negocio ($1.500.000)")
+      document.getElementById("waPremium").href = wa("Hola, me interesa el paquete Web Premium ($2.200.000)")
+
+      // Testimonios (editables desde config.js → CONFIG.testimonials)
+      const testimonials = (CONFIG.testimonials && CONFIG.testimonials.length)
+        ? CONFIG.testimonials
+        : [
+            "Me llegó más de 10 clientes nuevos el primer mes. La inversión se pagó sola.",
+            "En 3 días ya tenía mi página y los clientes me escribían por WhatsApp.",
+            "Por fin mi negocio se ve profesional. Antes solo tenía Instagram."
+          ]
+
+      document.getElementById("testimonialsGrid").innerHTML = testimonials.map(t => `
+        <figure class="bg-white rounded-2xl border shadow-sm p-8">
+          <div class="text-yellow-400 text-lg mb-3">★★★★★</div>
+          <blockquote class="text-gray-600 mb-6">“${t}”</blockquote>
+          <figcaption class="text-sm font-semibold text-gray-800">Cliente verificado</figcaption>
+        </figure>
+      `).join("")
+
+      // FAQ
+      const FAQS = [
+        ["¿Cuánto tarda la entrega?", "Entre 3 y 7 días hábiles dependiendo del paquete. Si tienes fotos y textos listos, puede ser más rápido."],
+        ["¿Qué necesito para empezar?", "Solo el nombre de tu negocio, tu WhatsApp, fotos de tus productos/servicios y tus redes sociales. Nosotros hacemos el resto."],
+        ["¿La página funciona en celular?", "Sí, todos los diseños son 100% responsive: se ven perfectos en celular, tablet y computador."],
+        ["¿Qué pasa después del primer año?", "Tu web sigue funcionando. El plan anual ($600.000) incluye hosting, mantenimiento y cambios menores. Sin renovaciones ocultas."],
+        ["¿Puedo hacer cambios después?", "Sí. El primer mes incluye cambios ilimitados. Después, cada cambio tiene un costo pequeño o entra en el plan anual."],
+        ["¿Cómo pago?", "50% de anticipo para arrancar y 50% contra entrega de la página terminada."]
+      ]
+
+      document.getElementById("faqList").innerHTML = FAQS.map(([q, a]) => `
+        <details class="group bg-white rounded-2xl border shadow-sm overflow-hidden">
+          <summary class="flex justify-between items-center p-6 cursor-pointer font-semibold list-none">
+            ${q}
+            <span class="text-brand-500 group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
+          </summary>
+          <p class="px-6 pb-6 text-gray-500 text-sm">${a}</p>
+        </details>
+      `).join("")
+
+      // ===============================
+      // GRID DE TEMPLATES
+      // ===============================
+      const grid = document.getElementById("templateGrid")
+
+      grid.innerHTML = TEMPLATES.map(t => `
+        <div class="bg-white rounded-2xl border shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 overflow-hidden flex flex-col">
+          <div class="bg-gray-800">
+            <div class="flex items-center gap-1.5 px-4 py-2.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+              <span class="ml-3 text-[11px] text-gray-400 font-mono truncate">${t.demo.replace('./', 'tunegocio.com/')}</span>
+            </div>
+            <div class="h-36 bg-gradient-to-br from-indigo-50 via-white to-gray-100 flex items-center justify-center text-6xl">
+              ${t.emoji}
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <span class="self-start text-xs font-bold bg-brand-50 text-brand-600 px-3 py-1 rounded-full mb-3">${t.tag}</span>
+            <h4 class="font-bold text-lg mb-2">${t.name}</h4>
+            <p class="text-sm text-gray-500 mb-6 flex-1">${t.desc}</p>
+            <div class="flex gap-3">
+              <a href="${t.demo}" target="_blank"
+                class="flex-1 text-center border border-gray-300 py-2 rounded-xl text-sm font-semibold hover:bg-gray-50 transition">
+                Ver demo
+              </a>
+              <a target="_blank" href="${wa(`Hola, me interesa el template de ${t.name}`)}"
+                class="flex-1 text-center bg-green-500 text-white py-2 rounded-xl text-sm font-semibold hover:bg-green-600 transition">
+                Quiero este
+              </a>
+            </div>
+          </div>
+        </div>
+      `).join("")
+    </script>
+  </body>
+</html>

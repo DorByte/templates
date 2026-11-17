@@ -1,44 +1,49 @@
 const CONFIG = {
 
-    businessName: "Tech Store",
-    businessName2:"Tech Store - Celulares y Accesorios",
+    businessName: "Mi Negocio",
+    businessName2:"Mi Negocio - Servicios Profesionales",
 
-    phone: "573008935057",
+    phone: "573001234567",
 
-    phoneText: "📞 (57) 300 893 5057",
+    phoneText: "📞 (57) 300 123 4567",
 
-    address: "📍 Calle 10 #5-20, Melgar",
+    address: "📍 Tu dirección, Ciudad",
 
-    hours: "🕒 Lunes a Domingo 5pm - 11pm",
+    // Query para el mapa embebido (ciudad, dirección o coordenadas)
+    mapQuery: "Melgar, Tolima, Colombia",
 
-    instagram: "https://www.instagram.com/jsdorado17/",
+    hours: "🕒 Lunes a Viernes 8am - 6pm",
 
-    facebook: "https://web.facebook.com/profile.php?id=100088269885098",
+    instagram: "",
 
+    facebook: "",
 
-    products: [
-        {
-            name: "iPhone 13",
-            price: "$2.800.000",
-            image: "assets/images/iphone.webp"
-        },
+    socialText: "Síguenos y descubre novedades",
 
-        {
-            name: "Samsung S21",
-            price: "$2.200.000",
-            image: "assets/images/samsungS21.webp"
-        },
+    heroTitle: "Soluciones profesionales para ti",
+    heroSubtitle: "Calidad, confianza y experiencia",
+    heroCta: "Contáctanos",
 
-        {
-            name: "Xiaomi Redmi",
-            price: "$1.200.000",
-            image: "assets/images/xiaomi_redmi.webp"
-        },
+    services: [
+        { name: "Servicio 1", description: "Descripción breve del servicio." },
+        { name: "Servicio 2", description: "Descripción breve del servicio." },
+        { name: "Servicio 3", description: "Descripción breve del servicio." }
+    ],
 
-        {
-            name: "AirPods Pro",
-            price: "$900.000",
-            image: "assets/images/airpods.webp"
-        }
+    // Productos opcionales: si agregas items aquí, la sección aparece sola.
+    // products: [
+    //     { name: "Producto 1", price: "$50.000", image: "assets/images/ejemplo.webp" }
+    // ],
+
+    gallery: [
+        "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=600&q=80"
+    ],
+
+    testimonials: [
+        "Excelente servicio, muy recomendado",
+        "Profesionales y puntuales",
+        "Volvería sin dudarlo"
     ]
 }

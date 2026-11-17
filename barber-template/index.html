@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Peluquería y barbería con estilo. Reserva tu cita por WhatsApp." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✂️</text></svg>" />
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title id="nameTitle">Studio Glam - Peluquería</title>
@@ -21,8 +23,8 @@
 
     <section class="hero">
       <div>
-        <h2>Tu estilo empieza aquí</h2>
-        <p>Cortes modernos, coloración profesional y peinados increíbles</p>
+        <h2 id="heroTitle">Tu estilo empieza aquí</h2>
+        <p id="heroSubtitle">Cortes modernos, coloración profesional y peinados increíbles</p>
 
         <a class="btn" target="_blank" id="btnR" href="https://wa.me/"
           >Reservar por WhatsApp</a
@@ -33,13 +35,7 @@
     <section id="service" class="services">
       <h2>Nuestros Servicios</h2>
 
-      <div class="service-grid">
-        <div id="content" class="service">
-          <h3 id="name">Corte de cabello</h3>
-          <p id="description">Estilos modernos adaptados a tu personalidad.</p>
-        </div>
-
-       
+      <div id="servicesGrid" class="service-grid">
       </div>
     </section>
 
@@ -68,8 +64,10 @@
         >Reservar cita</a
       >
       <iframe
+        id="mapFrame"
         class="w-full h-80 rounded-lg"
-        src="https://maps.google.com/maps?q=4.207167,-74.639123&t=&z=16&ie=UTF8&iwloc=&output=embed"
+        src="https://maps.google.com/maps?q=Melgar,Tolima&t=&z=16&ie=UTF8&iwloc=&output=embed"
+        loading="lazy"
       >
       </iframe>
     </section>
@@ -77,7 +75,7 @@
     <section  class="py-16 text-center social">
       <h3 class="text-3xl font-bold mb-6">Síguenos en nuestras redes</h3>
 
-      <p class="mb-8">Descubre nuestros platos, promociones y novedades</p>
+      <p id="socialText" class="mb-8">Síguenos y descubre novedades</p>
 
       <div class="flex justify-center gap-6">
         <a
@@ -126,6 +124,15 @@
     <footer>
       <p id="footerName">© 2026 Studio Glam - Peluquería</p>
     </footer>
+
+    <!-- BOTÓN WHATSAPP FLOTANTE -->
+    <a
+      id="whatsappFloat"
+      target="_blank"
+      class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg text-xl hover:scale-110 transition"
+    >
+      💬
+    </a>
     <script src="config.js"></script>
     <script src="js/main.js"></script>
   </body>

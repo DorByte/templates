@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Taller de servicio técnico para vehículos. Diagnóstico y reparaciones con garantía.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
 
 <title id="title"></title>
 
@@ -13,11 +15,11 @@
 <body class="text-gray-800">
 
 <!-- NAVBAR -->
-<header class="flex justify-between items-center p-6 shadow">
+<header class="flex justify-between items-center p-6 shadow bg-white sticky top-0 z-50">
 
 <h1 id="businessName" class="text-xl font-bold"></h1>
 
-<a id="whatsappNav"
+<a id="whatsappNav" target="_blank"
 class="bg-yellow-500 text-black px-4 py-2 rounded-lg font-semibold">
 WhatsApp
 </a>
@@ -27,15 +29,15 @@ WhatsApp
 <!-- HERO -->
 <section class="bg-gray-900 text-white text-center py-20">
 
-<h2 class="text-4xl font-bold mb-4">
+<h2 id="heroTitle" class="text-4xl font-bold mb-4">
 Servicio técnico confiable para tu vehículo
 </h2>
 
-<p class="mb-6">
+<p id="heroSubtitle" class="mb-6">
 Diagnóstico rápido y atención inmediata
 </p>
 
-<a id="whatsappHero"
+<a id="whatsappHero" target="_blank"
 class="bg-yellow-500 text-black px-6 py-3 rounded-xl font-semibold">
 Solicitar servicio
 </a>
@@ -49,56 +51,34 @@ Solicitar servicio
 Nuestros Servicios
 </h3>
 
-<div class="grid md:grid-cols-3 gap-8">
-
-<div class="p-6 shadow rounded-xl">
-<h4 class="font-semibold">Cambio de aceite</h4>
-<p>Mantenimiento rápido y seguro</p>
-</div>
-
-<div class="p-6 shadow rounded-xl">
-<h4 class="font-semibold">Diagnóstico</h4>
-<p>Revisión completa del vehículo</p>
-</div>
-
-<div class="p-6 shadow rounded-xl">
-<h4 class="font-semibold">Reparaciones</h4>
-<p>Motor, frenos y suspensión</p>
-</div>
+<div id="servicesGrid" class="grid md:grid-cols-3 gap-8">
 
 </div>
 
 </section>
 
 <!-- GALERIA -->
-<section class="py-16 bg-gray-100 text-center">
+<section id="gallerySection" class="py-16 bg-gray-100 text-center">
 
 <h3 class="text-3xl font-bold mb-10">
 Nuestro Trabajo
 </h3>
 
-<div class="grid md:grid-cols-3 gap-4 max-w-6xl mx-auto px-6">
-
-<img src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c" class="rounded-lg">
-<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70" class="rounded-lg">
-<img src="https://images.unsplash.com/photo-1515923256482-1c04580b477c" class="rounded-lg">
+<div id="galleryGrid" class="grid md:grid-cols-3 gap-4 max-w-6xl mx-auto px-6">
 
 </div>
 
 </section>
 
 <!-- CONFIANZA -->
-<section class="py-16 text-center">
+<section id="trustSection" class="py-16 text-center">
 
 <h3 class="text-3xl font-bold mb-6">
 ¿Por qué elegirnos?
 </h3>
 
-<div class="space-y-2">
-<p>✔ Más de 10 años de experiencia</p>
-<p>✔ Atención rápida</p>
-<p>✔ Técnicos especializados</p>
-<p>✔ Garantía en servicios</p>
+<div id="trustList" class="space-y-2">
+
 </div>
 
 </section>
@@ -110,7 +90,7 @@ Nuestro Trabajo
 ¿Tu vehículo necesita atención?
 </h3>
 
-<a id="whatsappFinal"
+<a id="whatsappFinal" target="_blank"
 class="bg-black text-white px-6 py-3 rounded-xl">
 Escríbenos ahora
 </a>
@@ -124,16 +104,60 @@ Escríbenos ahora
 Contáctanos
 </h3>
 
-<p id="address"></p>
-<p id="phone"></p>
+<p id="address" class="mb-2"></p>
+<p id="phone" class="mb-2"></p>
+<p id="hours" class="mb-6"></p>
+
+<iframe
+  id="mapFrame"
+  class="w-full h-80 rounded-lg max-w-4xl mx-auto"
+  src="https://maps.google.com/maps?q=Melgar,Tolima&t=&z=16&ie=UTF8&iwloc=&output=embed"
+  loading="lazy"
+>
+</iframe>
 
 </section>
+
+<section id="socialSection" class="bg-white py-16 text-center">
+      <h3 class="text-3xl font-bold mb-6">Síguenos en nuestras redes</h3>
+
+      <p id="socialText" class="mb-8">Síguenos y descubre novedades</p>
+
+      <div class="flex justify-center gap-6">
+        <a
+          target="_blank"
+          id="instagramLink"
+          class="flex items-center gap-2 bg-pink-500 text-white px-6 py-3 rounded-lg"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.8 0 5.5 0 4.7.1 3.9.1 3.3.3 2.8.5a4 4 0 0 0-1.5 1A4 4 0 0 0 .5 3c-.2.5-.4 1.1-.4 1.9C0 5.7 0 6 0 8s0 2.3.1 3.1c0 .8.2 1.4.4 1.9a4 4 0 0 0 1 1.5 4 4 0 0 0 1.5 1c.5.2 1.1.4 1.9.4.8.1 1.1.1 3.1.1s2.3 0 3.1-.1c.8 0 1.4-.2 1.9-.4a4 4 0 0 0 1.5-1 4 4 0 0 0 1-1.5c.2-.5.4-1.1.4-1.9.1-.8.1-1.1.1-3.1s0-2.3-.1-3.1c0-.8-.2-1.4-.4-1.9a4 4 0 0 0-1-1.5 4 4 0 0 0-1.5-1c-.5-.2-1.1-.4-1.9-.4C10.3 0 10 0 8 0zm0 3.9A4.1 4.1 0 1 1 3.9 8 4.1 4.1 0 0 1 8 3.9zm0 6.7A2.6 2.6 0 1 0 5.4 8 2.6 2.6 0 0 0 8 10.6zm4.3-6.8a1 1 0 1 1-1-1 1 1 0 0 1 1 1z"/></svg>
+          Instagram
+        </a>
+
+        <a
+          target="_blank"
+          id="facebookLink"
+          class="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8a8 8 0 1 0-9.2 7.9V10.3H4.9V8h1.9V6.2c0-1.9 1.1-3 2.9-3 .8 0 1.7.1 1.7.1v1.8h-1c-1 0-1.3.6-1.3 1.2V8h2.2l-.3 2.3H9.1v5.6A8 8 0 0 0 16 8z"/></svg>
+          Facebook
+        </a>
+      </div>
+    </section>
 
 <footer class="text-center py-6 bg-gray-900 text-white">
 
 <p id="footerName"></p>
 
 </footer>
+
+<!-- BOTÓN WHATSAPP FLOTANTE -->
+<a
+  id="whatsappFloat"
+  target="_blank"
+  class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg text-xl hover:scale-110 transition"
+>
+  💬
+</a>
 
 <script src="config.js"></script>
 <script src="js/main.js"></script>

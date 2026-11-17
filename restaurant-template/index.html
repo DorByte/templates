@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Restaurante con pedidos directos por WhatsApp. Menú, ubicación y reservas." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>" />
     <title id="title"></title>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -27,16 +29,16 @@
 
     <!-- HERO -->
     <section class="relative">
-      <img src="assets/images/hero.jpg" class="w-full h-[400px] object-cover" />
+      <img id="heroImage" src="assets/images/hero.jpg" class="w-full h-[400px] object-cover" />
 
       <div
         class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-white text-center px-4"
       >
-        <h2 class="text-4xl font-bold mb-4">
+        <h2 id="heroTitle" class="text-4xl font-bold mb-4">
           Las mejores comidas de la ciudad
         </h2>
 
-        <p class="mb-6">Pide fácil y rápido desde tu celular</p>
+        <p id="heroSubtitle" class="mb-6">Pide fácil y rápido desde tu celular</p>
 
         <a
           target="_blank"
@@ -50,31 +52,17 @@
 
     <!-- MENU DESTACADO -->
     <section class="py-16 max-w-6xl mx-auto px-4">
-      <h3 class="text-3xl font-bold text-center mb-10">Menú Destacado</h3>
+      <h3 id="menuTitle" class="text-3xl font-bold text-center mb-10">Menú Destacado</h3>
 
-      <div class="grid md:grid-cols-3 gap-8">
-        <div id = "content" class="bg-white rounded-xl shadow overflow-hidden">
-          <img id="image"
-            src="assets/images/burger.jpg"
-            class="w-full h-48 object-cover"
-          />
-
-          <div class="p-4">
-            <h4 id="name" class="font-semibold text-lg">Hamburguesa Especial</h4>
-            <p id="description" class="text-gray-600 text-sm">
-              Carne artesanal + queso + salsa especial
-            </p>
-            <p id="price" class="mt-2 font-bold">$18.000</p>
-          </div>
-        </div>
-
+      <div id="menuGrid" class="grid md:grid-cols-3 gap-8">
       </div>
       <div class="text-center mt-10">
         <a
+          id="downloadButton"
           target="_blank"
-          href="./assets/files/menu.jpg"
+          href="#"
           download
-          class="bg-black text-white px-6 py-3 rounded-lg"
+          class="hidden bg-black text-white px-6 py-3 rounded-lg"
         >
           Ver menú completo
         </a>
@@ -107,8 +95,10 @@
       <p id="hours" class="mb-6"></p>
 
       <iframe
+        id="mapFrame"
         class="w-full h-80 rounded-lg"
-        src="https://maps.google.com/maps?q=4.207167,-74.639123&t=&z=16&ie=UTF8&iwloc=&output=embed"
+        src="https://maps.google.com/maps?q=Melgar,Tolima&t=&z=16&ie=UTF8&iwloc=&output=embed"
+        loading="lazy"
       >
       </iframe>
       </div>
@@ -116,7 +106,7 @@
      <section class="bg-white py-16 text-center">
       <h3 class="text-3xl font-bold mb-6">Síguenos en nuestras redes</h3>
 
-      <p class="mb-8">Descubre nuestros platos, promociones y novedades</p>
+      <p id="socialText" class="mb-8">Síguenos y descubre nuestros platos</p>
 
       <div class="flex justify-center gap-6">
         <a
@@ -175,7 +165,6 @@
       >
         Pedir por WhatsApp
       </a>
-    </div>
     </section>
 
     <!-- FOOTER -->
