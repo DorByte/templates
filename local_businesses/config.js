@@ -3,9 +3,9 @@ const CONFIG = {
     businessName: "Mi Negocio",
     businessName2:"Mi Negocio - Servicios Profesionales",
 
-    phone: "573001234567",
+    phone: "573008935057",
 
-    phoneText: "📞 (57) 300 123 4567",
+    phoneText: "📞 (57) 300 893 5057",
 
     address: "📍 Tu dirección, Ciudad",
 

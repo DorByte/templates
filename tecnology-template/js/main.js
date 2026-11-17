@@ -51,7 +51,7 @@ if (!CONFIG.instagram && !CONFIG.facebook) {
 const message = CONFIG.whatsappMessage || `Hola, estoy interesado en los productos de ${CONFIG.businessName}`
 const whatsapp = `https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(message)}`
 
-;["whatsappNav", "whatsappHero", "whatsappCta"].forEach(id => {
+;["whatsappNav", "whatsappHero", "whatsappCta", "whatsappFloat"].forEach(id => {
     const el = document.getElementById(id)
     if (el) el.href = whatsapp
 })

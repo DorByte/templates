@@ -1,9 +1,9 @@
 const CONFIG = {
 
-businessName: "Mi Negocio",
-phoneText: "📞 (57) 300 123 4567",
+businessName: "Dorbyte",
+phoneText: "📞 (57) 300 893 5057",
 
-phone: "573001234567",
+phone: "573008935057",
 
 address: "📍 Melgar, Tolima",
 

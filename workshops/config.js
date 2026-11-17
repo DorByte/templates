@@ -3,9 +3,9 @@ const CONFIG = {
     businessName: "Taller El Motor",
     businessName2:"Taller El Motor - Servicio Técnico Vehicular",
 
-    phone: "573001234567",
+    phone: "573008935057",
 
-    phoneText: "📞 (57) 300 123 4567",
+    phoneText: "📞 (57) 300 893 5057",
 
     address: "📍 Av. Principal #10-20, Melgar",
 
