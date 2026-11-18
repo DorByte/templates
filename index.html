@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Páginas web profesionales para tu negocio. Diseño moderno, rápida y lista para vender." />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234f46e5'/><text x='50' y='68' font-size='55' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>D</text></svg>" />
     <title id="pageTitle">Páginas web que venden</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -32,7 +32,10 @@
     <!-- NAVBAR -->
     <header class="bg-white/80 backdrop-blur border-b sticky top-0 z-50">
       <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 id="businessName" class="text-lg font-bold tracking-wide text-brand-900"></h1>
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-500 to-indigo-600 text-white flex items-center justify-center font-extrabold text-lg shadow-sm">D</div>
+          <h1 id="businessName" class="text-lg font-bold tracking-wide text-brand-900"></h1>
+        </div>
 
         <nav class="hidden md:flex items-center gap-8 text-sm text-gray-600">
           <a href="#templates" class="hover:text-brand-600 transition">Templates</a>
@@ -76,7 +79,7 @@
     <section class="border-b bg-gray-50">
       <div class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
         <div>
-          <p class="text-3xl font-extrabold text-brand-600" id="statTemplates">7</p>
+          <p class="text-3xl font-extrabold text-brand-600" id="statTemplates">11</p>
           <p class="text-sm text-gray-500">Diseños disponibles</p>
         </div>
         <div>
@@ -221,6 +224,34 @@
       </div>
     </section>
 
+    <!-- FORMULARIO DE COTIZACIÓN -->
+    <section class="py-20 bg-gradient-to-br from-brand-900 to-indigo-600 text-white">
+      <div class="max-w-2xl mx-auto px-6">
+        <h3 class="text-3xl md:text-4xl font-extrabold text-center mb-4">Cotiza tu página web</h3>
+        <p class="text-center text-indigo-200 mb-10">
+          Diligencia el formulario y te llega directo a WhatsApp. Respondemos en minutos.
+        </p>
+
+        <form id="quoteForm" class="bg-white text-gray-800 rounded-2xl p-8 shadow-2xl space-y-4">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <input id="fName" required placeholder="Tu nombre" class="w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" />
+            <input id="fBusiness" required placeholder="Nombre del negocio" class="w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" />
+          </div>
+          <select id="fPackage" class="w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+            <option value="">¿Qué paquete te interesa?</option>
+            <option>Página Esencial ($800.000)</option>
+            <option>Web Negocio ($1.500.000)</option>
+            <option>Web Premium ($2.200.000)</option>
+            <option>No estoy seguro, quiero asesoría</option>
+          </select>
+          <textarea id="fMsg" rows="3" placeholder="Cuéntanos sobre tu negocio (opcional)" class="w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"></textarea>
+          <button type="submit" class="w-full bg-green-500 text-white py-3.5 rounded-xl font-semibold text-lg hover:bg-green-600 transition">
+            Enviar cotización por WhatsApp
+          </button>
+        </form>
+      </div>
+    </section>
+
     <!-- CTA FINAL -->
     <section class="bg-gray-900 text-white text-center py-20">
       <h3 class="text-3xl md:text-4xl font-extrabold mb-4">¿Listo para tener tu página web?</h3>
@@ -298,6 +329,34 @@
           desc: "Genérico para cualquier negocio local: servicios, productos opcionales, galería y contacto.",
           demo: "./local_businesses/",
           tag: "Genérico"
+        },
+        {
+          name: "Veterinaria",
+          emoji: "🐾",
+          desc: "Consultas, vacunas, cirugías y peluquería canina. Reserva de citas por WhatsApp.",
+          demo: "./web-template/?type=veterinaria",
+          tag: "Mascotas"
+        },
+        {
+          name: "Gimnasio",
+          emoji: "💪",
+          desc: "Planes, clases grupales y entrenamiento personal. Membresías por WhatsApp.",
+          demo: "./web-template/?type=gimnasio",
+          tag: "Salud"
+        },
+        {
+          name: "Clínica Dental",
+          emoji: "🦷",
+          desc: "Limpiezas, ortodoncia y estética dental. Citas y tratamientos por WhatsApp.",
+          demo: "./web-template/?type=dentista",
+          tag: "Salud"
+        },
+        {
+          name: "Inmobiliaria",
+          emoji: "🏠",
+          desc: "Venta y arriendo de propiedades, tasaciones y asesoría. Leads directos por WhatsApp.",
+          demo: "./web-template/?type=inmobiliaria",
+          tag: "Bienes raíces"
         }
       ]
 
@@ -358,6 +417,21 @@
           <p class="px-6 pb-6 text-gray-500 text-sm">${a}</p>
         </details>
       `).join("")
+
+      // Formulario de cotización → WhatsApp
+      document.getElementById("quoteForm").addEventListener("submit", function(e) {
+        e.preventDefault()
+        const name = document.getElementById("fName").value.trim()
+        const biz = document.getElementById("fBusiness").value.trim()
+        const pkg = document.getElementById("fPackage").value
+        const msg = document.getElementById("fMsg").value.trim()
+
+        let text = `Hola Dorbyte, soy ${name} del negocio "${biz}". `
+        if (pkg) text += `Me interesa: ${pkg}. `
+        if (msg) text += `Mensaje: ${msg}`
+
+        window.open(`https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(text)}`, "_blank")
+      })
 
       // ===============================
       // GRID DE TEMPLATES
