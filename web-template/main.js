@@ -55,7 +55,29 @@ const testimonials = CONFIG.testimonials && CONFIG.testimonials.length
   : ["Excelente servicio, muy recomendados", "Atención rápida y profesional", "Volvería sin dudarlo"]
 
 // ===============================
-// 🔹 4. TEXTOS
+// 🔹 4. TEMA POR TIPO DE NEGOCIO
+// ===============================
+
+const theme = info.theme || {}
+
+if (theme.primary) document.documentElement.style.setProperty("--brand", theme.primary)
+if (theme.secondary) document.documentElement.style.setProperty("--brand-2", theme.secondary)
+if (theme.font) document.body.style.fontFamily = theme.font
+
+const themeCSS = document.createElement("style")
+themeCSS.textContent = `
+  #whatsappNav, #whatsappHero, #downloadButton {
+    background-color: var(--brand, #000) !important;
+  }
+  #ctaSection {
+    background: linear-gradient(120deg, var(--brand, #111) 0%, var(--brand-2, #333) 100%) !important;
+  }
+  blockquote { border-left-color: var(--brand, #000) !important; }
+`
+document.head.appendChild(themeCSS)
+
+// ===============================
+// 🔹 5. TEXTOS
 // ===============================
 
 document.getElementById("title").innerText = CONFIG.businessName
@@ -110,7 +132,7 @@ if (!gallery.length) {
 }
 
 // ===============================
-// 🔹 5. WHATSAPP
+// 🔹 6. WHATSAPP
 // ===============================
 
 const message = CONFIG.whatsappMessage || `Hola, quiero información sobre ${CONFIG.businessName}`
@@ -126,7 +148,7 @@ document.getElementById("demoBadge").href =
   `https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(badgeMsg)}`
 
 // ===============================
-// 🔹 6. SERVICIOS DINÁMICOS
+// 🔹 7. SERVICIOS DINÁMICOS
 // ===============================
 
 const servicesContainer = document.getElementById("services")
@@ -142,7 +164,7 @@ if (servicesContainer && services.length) {
 }
 
 // ===============================
-// 🔹 7. GALERÍA + LIGHTBOX
+// 🔹 8. GALERÍA + LIGHTBOX
 // ===============================
 
 const galleryContainer = document.getElementById("gallery")
@@ -161,7 +183,7 @@ if (galleryContainer && gallery.length) {
 }
 
 // ===============================
-// 🔹 8. LIGHTBOX FUNCIONAL
+// 🔹 9. LIGHTBOX FUNCIONAL
 // ===============================
 
 window.openLightbox = function(src) {
@@ -178,7 +200,7 @@ if (lightbox) {
 }
 
 // ===============================
-// 🔹 9. Banner
+// 🔹 10. Banner
 // ===============================
 
 if (info.banner) {
@@ -195,7 +217,7 @@ if (info.banner) {
 }
 
 // ===============================
-// 🔹 10. REDES SOCIALES
+// 🔹 11. REDES SOCIALES
 // ===============================
 
 const instagramLink = document.getElementById("instagramLink")

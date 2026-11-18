@@ -4,6 +4,7 @@ taller: {
 title: "Servicio técnico confiable",
 subtitle: "Diagnóstico rápido y atención inmediata",
 banner: "assets/images/taller.webp",
+theme: { primary: "#f59e0b", secondary: "#d97706", font: "'Oswald', sans-serif" },
 services: [
     {title: "Cambio de aceite",detail: "Servicio garantizado"}, 
     {title: "Diagnóstico",detail: "Técnicos certificados"}, 
@@ -19,6 +20,7 @@ peluqueria: {
 title: "Tu estilo empieza aquí",
 banner: "assets/images/peluqueria.jpg",
 subtitle: "Cortes modernos y coloración profesional",
+theme: { primary: "#ec4899", secondary: "#f472b6", font: "'Playfair Display', serif" },
 services: [
     {title: "Corte", detail: "Cortes modernos"}, 
     {title: "Color", detail: "Coloración profesional"}, 
@@ -35,6 +37,7 @@ restaurante: {
 title: "Sabores que enamoran",
 banner: "assets/images/hero.jpg",
 subtitle: "Comida deliciosa para todos",
+theme: { primary: "#dc2626", secondary: "#ea580c", font: "'Poppins', sans-serif" },
 titleGallery: "Menu destacado",
 download: "assets/files/menu.jpg",
 buttonDownloadLabel: "Descargar menú",
@@ -53,6 +56,7 @@ ropa:{
 title: "Moda que inspira",
 banner: "assets/images/hero.webp",
 subtitle: "Ropa de calidad para todos los estilos",
+theme: { primary: "#4f46e5", secondary: "#8b5cf6", font: "'Poppins', sans-serif" },
 services: [
     {title: "Hombres", detail: "Moda masculina"},
     {title: "Mujeres", detail: "Moda femenina"},
@@ -70,6 +74,7 @@ tecnologia:{
 title: "Tecnología a tu alcance",
 banner: "assets/images/tecno.avif",
 subtitle: "Los mejores dispositivos para ti",
+theme: { primary: "#0284c7", secondary: "#06b6d4", font: "'Poppins', sans-serif" },
 titleGallery: "Productos destacados",
 services: [
     {title: "Smartphones", detail: "Últimos modelos"}, 
@@ -86,6 +91,7 @@ gallery: [
 veterinaria:{
 title: "Cuidamos a tu mascota como se merece",
 subtitle: "Consultas, vacunas y emergencias con amor",
+theme: { primary: "#059669", secondary: "#34d399", font: "'Poppins', sans-serif" },
 banner: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1600&q=80",
 services: [
     {title: "Consultas generales", detail: "Revisión completa de tu mascota"},
@@ -103,6 +109,7 @@ gallery: [
 gimnasio:{
 title: "Tu mejor versión empieza aquí",
 subtitle: "Entrenadores certificados y maquinaria de última generación",
+theme: { primary: "#ea580c", secondary: "#dc2626", font: "'Oswald', sans-serif" },
 banner: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=80",
 services: [
     {title: "Musculación", detail: "Zona de pesas y máquinas"},
@@ -120,6 +127,7 @@ gallery: [
 dentista:{
 title: "Sonrisas saludables y radiante",
 subtitle: "Odontología moderna sin dolor ni esperas",
+theme: { primary: "#0891b2", secondary: "#22d3ee", font: "'Poppins', sans-serif" },
 banner: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1600&q=80",
 services: [
     {title: "Limpieza dental", detail: "Profilaxis profesional"},
@@ -137,6 +145,7 @@ gallery: [
 inmobiliaria:{
 title: "Encuentra el hogar de tus sueños",
 subtitle: "Casas, apartamentos y lotes en las mejores zonas",
+theme: { primary: "#1d4ed8", secondary: "#3b82f6", font: "'Playfair Display', serif" },
 banner: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80",
 services: [
     {title: "Venta de inmuebles", detail: "Propiedades verificadas"},
