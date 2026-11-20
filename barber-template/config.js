@@ -24,6 +24,15 @@ const CONFIG = {
     heroSubtitle: "Cortes modernos, coloración profesional y peinados increíbles",
     heroCta: "Reservar por WhatsApp",
 
+    heroBadges: ["💈 Reserva tu cita", "✨ Productos premium", "💆‍♀️ Atención personalizada"],
+
+    stats: [
+        { num: "8+", label: "Años de experiencia" },
+        { num: "5.000+", label: "Clientes felices" },
+        { num: "12", label: "Estilistas expertos" },
+        { num: "4.9★", label: "Calificación" }
+    ],
+
     // Mensaje prellenado de WhatsApp (opcional)
     // whatsappMessage: "Hola, quiero reservar una cita",
 
@@ -31,10 +40,10 @@ const CONFIG = {
     contrast: "#ffffff",
 
     services: [
-        { name: "Corte de cabello",  description: "Estilos modernos adaptados a tu personalidad." },
-        { name: "Coloración",  description: "Balayage, tintes y técnicas profesionales."},
-        { name: "Peinados",  description: "Eventos, fiestas y ocasiones especiales." },
-        { name:"Tratamientos" , description:"Cuidado capilar y reparación profunda."}
+        { icon: "✂️", name: "Corte de cabello",  description: "Estilos modernos adaptados a tu personalidad." },
+        { icon: "🎨", name: "Coloración",  description: "Balayage, tintes y técnicas profesionales."},
+        { icon: "💇‍♀️", name: "Peinados",  description: "Eventos, fiestas y ocasiones especiales." },
+        { icon: "💆", name:"Tratamientos" , description:"Cuidado capilar y reparación profunda."}
 
     ]
 }

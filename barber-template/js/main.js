@@ -21,6 +21,22 @@ if (CONFIG.contactCta) {
     document.getElementById("btnC").innerText = CONFIG.contactCta
 }
 
+// Hero badges
+document.getElementById("heroBadges").innerHTML = (CONFIG.heroBadges || [])
+    .map(b => `<span>${b}</span>`)
+    .join("")
+
+// Stats
+document.documentElement.style.setProperty("--brand", CONFIG.color)
+if (CONFIG.stats && CONFIG.stats.length) {
+    document.getElementById("statsSection").classList.remove("hidden")
+    document.getElementById("statsGrid").innerHTML = CONFIG.stats.map(s => `
+    <div>
+      <p class="stat-num">${s.num}</p>
+      <p class="stat-label">${s.label}</p>
+    </div>`).join("")
+}
+
 // Redes sociales
 document.getElementById("instagramLink").href = CONFIG.instagram
 document.getElementById("facebookLink").href = CONFIG.facebook
@@ -64,6 +80,7 @@ const grid = document.getElementById("servicesGrid")
 if (grid && CONFIG.services && CONFIG.services.length) {
     grid.innerHTML = CONFIG.services.map(service => `
     <div class="service">
+      ${service.icon ? `<p style="font-size:2rem;margin-bottom:10px">${service.icon}</p>` : ""}
       <h3>${service.name || service.title}</h3>
       <p>${service.description || service.detail || ""}</p>
     </div>

@@ -20,6 +20,21 @@ if (CONFIG.heroImage) {
 if (CONFIG.heroCta) {
     document.getElementById("whatsappHero").innerText = CONFIG.heroCta
 }
+
+// Hero badges
+document.getElementById("heroBadges").innerHTML = (CONFIG.heroBadges || [])
+    .map(b => `<span class="bg-white/10 border border-white/25 text-white text-xs font-medium px-4 py-1.5 rounded-full backdrop-blur-sm">${b}</span>`)
+    .join("")
+
+// Stats
+if (CONFIG.stats && CONFIG.stats.length) {
+    document.getElementById("statsSection").classList.remove("hidden")
+    document.getElementById("statsGrid").innerHTML = CONFIG.stats.map(s => `
+    <div>
+      <p class="text-4xl font-bold text-gray-900">${s.num}</p>
+      <p class="text-sm text-gray-500 mt-1">${s.label}</p>
+    </div>`).join("")
+}
 if (CONFIG.socialText) {
     document.getElementById("socialText").innerText = CONFIG.socialText
 }

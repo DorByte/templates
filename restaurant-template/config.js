@@ -24,6 +24,15 @@ const CONFIG = {
     heroCta: "Pedir ahora",
     menuTitle: "Menú Destacado",
 
+    heroBadges: ["🛵 Domicilios a toda la ciudad", "📅 Reservas por WhatsApp", "⭐ Menú del día"],
+
+    stats: [
+        { num: "12+", label: "Años de tradición" },
+        { num: "40+", label: "Platos en el menú" },
+        { num: "2.000+", label: "Pedidos al mes" },
+        { num: "4.8★", label: "Calificación" }
+    ],
+
     // Archivo del menú completo para descargar (opcional)
     download: "assets/files/menu.jpg",
     downloadLabel: "Ver menú completo",

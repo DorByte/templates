@@ -24,10 +24,19 @@ const CONFIG = {
     heroSubtitle: "Calidad, confianza y experiencia",
     heroCta: "Contáctanos",
 
+    heroBadges: ["⭐ Atención personalizada", "⚡ Respuesta rápida", "🛡️ Garantía en nuestros servicios"],
+
+    stats: [
+        { num: "10+", label: "Años de experiencia" },
+        { num: "500+", label: "Clientes" },
+        { num: "98%", label: "Satisfacción" },
+        { num: "24h", label: "Tiempo de respuesta" }
+    ],
+
     services: [
-        { name: "Servicio 1", description: "Descripción breve del servicio." },
-        { name: "Servicio 2", description: "Descripción breve del servicio." },
-        { name: "Servicio 3", description: "Descripción breve del servicio." }
+        { icon: "💼", name: "Servicio 1", description: "Descripción breve del servicio." },
+        { icon: "📋", name: "Servicio 2", description: "Descripción breve del servicio." },
+        { icon: "🤝", name: "Servicio 3", description: "Descripción breve del servicio." }
     ],
 
     // Productos opcionales: si agregas items aquí, la sección aparece sola.

@@ -25,6 +25,15 @@ const CONFIG = {
     heroImage: "assets/images/hero.webp",
     heroCta: "Ver productos",
 
+    heroBadges: ["🚚 Envíos nacionales", "🔄 Cambios gratis 30 días", "🆕 Nuevas colecciones"],
+
+    stats: [
+        { num: "500+", label: "Prendas disponibles" },
+        { num: "3.000+", label: "Clientes" },
+        { num: "4.8★", label: "Calificación" },
+        { num: "24h", label: "Despacho express" }
+    ],
+
     // Mensaje prellenado de WhatsApp (opcional)
     // whatsappMessage: "Hola, quiero información sobre sus productos",
 

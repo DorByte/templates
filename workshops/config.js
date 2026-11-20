@@ -24,11 +24,20 @@ const CONFIG = {
     heroSubtitle: "Diagnóstico rápido y atención inmediata",
     heroCta: "Solicitar servicio",
 
+    heroBadges: ["🔧 Diagnóstico gratis", "⚙️ Garantía en reparaciones", "⏱️ Agenda tu cita"],
+
+    stats: [
+        { num: "10+", label: "Años de experiencia" },
+        { num: "3.000+", label: "Vehículos atendidos" },
+        { num: "15+", label: "Técnicos certificados" },
+        { num: "98%", label: "Clientes satisfechos" }
+    ],
+
     services: [
-        { name: "Cambio de aceite", description: "Mantenimiento rápido y seguro." },
-        { name: "Diagnóstico", description: "Revisión completa del vehículo." },
-        { name: "Reparaciones", description: "Motor, frenos y suspensión." },
-        { name: "Alineación y balanceo", description: "Con Equipos de última generación." }
+        { icon: "🛢️", name: "Cambio de aceite", description: "Mantenimiento rápido y seguro." },
+        { icon: "🔍", name: "Diagnóstico", description: "Revisión completa del vehículo." },
+        { icon: "🔧", name: "Reparaciones", description: "Motor, frenos y suspensión." },
+        { icon: "📐", name: "Alineación y balanceo", description: "Con Equipos de última generación." }
     ],
 
     gallery: [

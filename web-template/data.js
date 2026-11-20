@@ -226,8 +226,106 @@ gallery: [
 "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80",
 "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
 ]
+},
+
+farmacia:{
+title: "Tu salud es nuestra prioridad",
+subtitle: "Medicamentos, productos de cuidado y asesoría farmacéutica",
+banner: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1600&q=80",
+theme: { primary: "#16a34a", secondary: "#4ade80", font: "'Poppins', sans-serif" },
+badges: ["💊 Entrega a domicilio", "🧑‍⚕️ Asesoría farmacéutica", "⏰ Abierto fines de semana"],
+stats: [
+    {num:"10+",label:"Años de experiencia"},
+    {num:"5.000+",label:"Clientes"},
+    {num:"2.000+",label:"Productos"},
+    {num:"24h",label:"Domicilios express"}
+],
+services: [
+    {icon:"💊",title:"Venta de medicamentos",detail:"Con fórmula y sin fórmula"},
+    {icon:"🧴",title:"Cuidado personal",detail:"Skincare, higiene y bienestar"},
+    {icon:"🩺",title:"Toma de presión",detail:"Chequeos gratuitos"},
+    {icon:"🛵",title:"Domicilios",detail:"A toda la ciudad"}
+],
+gallery: [
+"https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=80",
+"https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=800&q=80",
+"https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=800&q=80"
+]
+},
+
+spa:{
+title: "Relax, rejuvenece y olvídate del estrés",
+subtitle: "Masajes, tratamientos faciales y rituales de bienestar",
+banner: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=80",
+theme: { primary: "#a855f7", secondary: "#d8b4fe", font: "'Playfair Display', serif" },
+badges: ["🕯️ Ambiente relax", "💆 Masajes terapéuticos", "✨ Tratamientos faciales"],
+stats: [
+    {num:"8+",label:"Años de experiencia"},
+    {num:"3.000+",label:"Clientes"},
+    {num:"15+",label:"Tratamientos"},
+    {num:"5.0★",label:"Calificación"}
+],
+services: [
+    {icon:"💆",title:"Masajes",detail:"Relajantes, descontracturantes y holísticos"},
+    {icon:"✨",title:"Faciales",detail:"Limpieza, hidratación y anti-edad"},
+    {icon:"🧖",title:"Rituales spa",detail:"Experiencias completas de bienestar"},
+    {icon:"💅",title:"Manicure y pedicure",detail:"Uñas impecables siempre"}
+],
+gallery: [
+"https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
+"https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80",
+"https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
+]
+},
+
+academia:{
+title: "Aprende, crece y alcanza tus metas",
+subtitle: "Cursos, tutorías y formación para todas las edades",
+banner: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=80",
+theme: { primary: "#2563eb", secondary: "#60a5fa", font: "'Poppins', sans-serif" },
+badges: ["📚 Grupos reducidos", "🎓 Docentes certificados", "📅 Horarios flexibles"],
+stats: [
+    {num:"10+",label:"Años enseñando"},
+    {num:"800+",label:"Estudiantes"},
+    {num:"25+",label:"Cursos disponibles"},
+    {num:"95%",label:"Aprobación"}
+],
+services: [
+    {icon:"📚",title:"Cursos regulares",detail:"Matemáticas, ciencias e idiomas"},
+    {icon:"👨‍🏫",title:"Tutorías personalizadas",detail:"Atención uno a uno"},
+    {icon:"💻",title:"Clases virtuales",detail:"Desde casa con calidad"},
+    {icon:"📝",title:"Preparación de exámenes",detail:"ICFES, universidad y más"}
+],
+gallery: [
+"https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80",
+"https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
+"https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=800&q=80"
+]
+},
+
+panaderia:{
+title: "El pan de cada día, hecho con amor",
+subtitle: "Repostería artesanal, tortas personalizadas y pedidos especiales",
+banner: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1600&q=80",
+theme: { primary: "#b45309", secondary: "#f59e0b", font: "'Poppins', sans-serif" },
+badges: ["🎂 Tortas personalizadas", "🥐 Horneado diario", "🛵 Entregas a domicilio"],
+stats: [
+    {num:"15+",label:"Años horneando"},
+    {num:"50+",label:"Tipos de pan"},
+    {num:"1.000+",label:"Clientes"},
+    {num:"100%",label:"Ingredientes naturales"}
+],
+services: [
+    {icon:"🥐",title:"Panadería",detail:"Pan fresco todos los días"},
+    {icon:"🎂",title:"Tortas personalizadas",detail:"Cumpleaños, bodas y eventos"},
+    {icon:"🧁",title:"Repostería",detail:"Cupcakes, cookies y más"},
+    {icon:"☕",title:"Desayunos",detail:"Combos para empezar el día"}
+],
+gallery: [
+"https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80",
+"https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=800&q=80",
+"https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80"
+]
 }
-
-
 
 }

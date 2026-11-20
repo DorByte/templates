@@ -17,9 +17,25 @@ if (CONFIG.heroCta) {
     document.getElementById("whatsappHero").innerText = CONFIG.heroCta
 }
 
+// Hero badges (hero oscuro → estilo claro)
+document.getElementById("heroBadges").innerHTML = (CONFIG.heroBadges || [])
+    .map(b => `<span style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px">${b}</span>`)
+    .join("")
+
+// Stats
+if (CONFIG.stats && CONFIG.stats.length) {
+    document.getElementById("statsSection").classList.remove("hidden")
+    document.getElementById("statsGrid").innerHTML = CONFIG.stats.map(s => `
+    <div>
+      <p class="text-4xl font-bold" style="color:#eab308">${s.num}</p>
+      <p class="text-sm text-gray-500 mt-1">${s.label}</p>
+    </div>`).join("")
+}
+
 // Servicios
 document.getElementById("servicesGrid").innerHTML = (CONFIG.services || []).map(service => `
 <div class="p-6 shadow rounded-xl bg-white">
+${service.icon ? `<p style="font-size:2rem;margin-bottom:10px">${service.icon}</p>` : ""}
 <h4 class="font-semibold">${service.name || service.title}</h4>
 <p class="text-gray-500 text-sm mt-1">${service.description || service.detail || ""}</p>
 </div>

@@ -26,6 +26,15 @@ const CONFIG = {
 
     categories: ["Celulares", "Cargadores", "Audífonos", "Fundas"],
 
+    heroBadges: ["📱 Garantía oficial", "🔄 Cambios fáciles", "🛠️ Soporte técnico"],
+
+    stats: [
+        { num: "8+", label: "Años de experiencia" },
+        { num: "1.500+", label: "Productos" },
+        { num: "500+", label: "Clientes" },
+        { num: "4.9★", label: "Calificación" }
+    ],
+
     // Mensaje prellenado de WhatsApp (opcional)
     // whatsappMessage: "Hola, quiero cotizar un producto",
 
