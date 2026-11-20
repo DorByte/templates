@@ -50,6 +50,9 @@ const services = (info.services || []).map(s =>
 )
 
 const gallery = info.gallery || []
+const badges = info.badges || []
+const stats = info.stats || []
+const plans = info.plans || []
 const testimonials = CONFIG.testimonials && CONFIG.testimonials.length
   ? CONFIG.testimonials
   : ["Excelente servicio, muy recomendados", "Atención rápida y profesional", "Volvería sin dudarlo"]
@@ -73,8 +76,15 @@ themeCSS.textContent = `
     background: linear-gradient(120deg, var(--brand, #111) 0%, var(--brand-2, #333) 100%) !important;
   }
   blockquote { border-left-color: var(--brand, #000) !important; }
+  .plan-card { border-top: 4px solid var(--brand, #000) !important; }
 `
 document.head.appendChild(themeCSS)
+
+// Helpers de color
+function hexA(hex, alpha) {
+  const n = parseInt(hex.slice(1), 16)
+  return `rgba(${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}, ${alpha})`
+}
 
 // ===============================
 // 🔹 5. TEXTOS
@@ -123,6 +133,41 @@ testimonialsEl.innerHTML = testimonials
   .map(t => `<blockquote class="border-l-4 border-black pl-4 text-left italic">“${t}”</blockquote>`)
   .join("")
 
+// Badges del hero (se ven sobre el overlay oscuro del banner)
+if (badges.length && info.banner) {
+  document.getElementById("heroBadges").innerHTML = badges
+    .map(b => `<span class="bg-white/10 border border-white/25 text-white text-xs font-medium px-4 py-1.5 rounded-full backdrop-blur-sm">${b}</span>`)
+    .join("")
+}
+
+// Estadísticas
+if (stats.length) {
+  document.getElementById("statsSection").classList.remove("hidden")
+  document.getElementById("statsGrid").innerHTML = stats
+    .map(s => `
+      <div>
+        <p class="text-4xl font-bold" style="color:var(--brand,#111)">${s.num}</p>
+        <p class="text-sm text-gray-500 mt-1">${s.label}</p>
+      </div>`)
+    .join("")
+}
+
+// Planes / precios
+if (plans.length) {
+  document.getElementById("plansSection").classList.remove("hidden")
+  document.getElementById("plansGrid").innerHTML = plans
+    .map(p => `
+      <div class="plan-card bg-white rounded-2xl shadow-sm border p-8 text-left flex flex-col">
+        <h4 class="font-semibold text-lg">${p.name}</h4>
+        <p class="text-3xl font-bold my-3" style="color:var(--brand,#111)">${p.price}</p>
+        <ul class="space-y-2 text-sm text-gray-500 mb-6 flex-1">
+          ${(p.features || []).map(f => `<li>✔ ${f}</li>`).join("")}
+        </ul>
+        <a href="https://wa.me/${CONFIG.phone}" target="_blank" class="block text-center text-white py-2.5 rounded-xl text-sm font-semibold hover:opacity-80 transition" style="background-color:var(--brand,#000)">Elegir plan</a>
+      </div>`)
+    .join("")
+}
+
 // Secciones opcionales
 if (!services.length) {
   document.getElementById("servicesSection").style.display = "none"
@@ -157,6 +202,7 @@ if (servicesContainer && services.length) {
   servicesContainer.innerHTML = services
     .map(service => `
     <div class="p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition text-left">
+      ${service.icon ? `<p class="text-3xl mb-3">${service.icon}</p>` : ""}
       <h4 class="font-semibold text-lg mb-2">${service.title}</h4>
       <p class="text-gray-500 text-sm">${service.detail}</p>
     </div>`)
@@ -212,7 +258,13 @@ if (info.banner) {
   document.getElementById("heroTitle").style.color = "white"
   document.getElementById("heroSubtitle").style.color = "white"
   hero.className = "h-[70vh] flex items-center justify-center bg-gray-100 text-center"
-  document.getElementById("heroContent").className = "bg-black bg-opacity-60 p-8 rounded-2xl backdrop-blur-sm"
+  const heroContent = document.getElementById("heroContent")
+  heroContent.className = "p-8 rounded-2xl backdrop-blur-sm"
+  if (theme.primary && theme.secondary) {
+    heroContent.style.background = `linear-gradient(135deg, ${hexA(theme.primary, 0.88)}, ${hexA(theme.secondary, 0.88)})`
+  } else {
+    heroContent.style.background = "rgba(0,0,0,0.6)"
+  }
   document.getElementById("whatsappHero").classList.add("border-2", "border-white")
 }
 
